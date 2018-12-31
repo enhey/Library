@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+ <AnchorPane fx:id="pan" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+ fx:controller="application.libController">
+ 
+   <children>
+      <Button fx:id="login" layoutX="793.0" layoutY="523.0" mnemonicParsing="false" onAction="#login" text="登录">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Text layoutX="695.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="帐号">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="695.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="密码">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="user_read" layoutX="786.0" layoutY="364.0" mnemonicParsing="false" onAction="#loginreader" text="用户" />
+      <RadioButton fx:id="user_work" layoutX="881.0" layoutY="364.0" mnemonicParsing="false" onAction="#loginwork" text="管理员" />
+      <CheckBox fx:id="rememberInfo" layoutX="895.0" layoutY="530.0" mnemonicParsing="false" text="记住密码" />
+      <TextField fx:id="user_id" layoutX="768.0" layoutY="409.0" promptText="请输入帐号" />
+      <Text fill="#cd183f" layoutX="139.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="江西财经大学图书管理系统">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#f5ed0c" layoutX="504.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="登录界面">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="user_password" layoutX="768.0" layoutY="465.0" promptText="请输入密码" />
+      <ProgressBar fx:id="prgs_login" layoutX="50.0" layoutY="756.0" prefWidth="1100.0" progress="0.0" />
+      <Text fx:id="judeId" fill="#f80202" layoutX="983.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="136.30029296875" />
+      <Text fx:id="judePassword" fill="#fc0505" layoutX="983.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="136.30029296875" />
+   </children>
+</AnchorPane>
