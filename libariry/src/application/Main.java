@@ -13,16 +13,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-
+/**
+ * 
+ * @author èµ–å¿—å¿
+ *2018å¹´10æœˆ11æ—¥ä¸‹åˆ6:00:20
+ */
 public class Main extends Application {
 	private Stage mainstage;
 	Base base;
 	@Override	
 	public void start(Stage primaryStage) throws Exception {
 			mainstage=primaryStage;
-			mainstage.setResizable(false);//´°¿Ú´óĞ¡¿É±ä			
+			mainstage.setResizable(false);//çª—å£å¤§å°å¯å˜			
 			mainstage.getIcons().add(new Image("/images/juflogo.jpg"));
-			mainstage.setTitle("½­Î÷²Æ¾­´óÑ§Í¼Êé¹İ¹ÜÀíÏµÍ³");			
+			mainstage.setTitle("æ±Ÿè¥¿è´¢ç»å¤§å­¦å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ");			
 			mainstage.setWidth(1200);
 			mainstage.setHeight(800);
 			homeui();			
