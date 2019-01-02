@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<AnchorPane fx:id="pan" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane fx:id="tabmax" layoutX="48.0" layoutY="183.0" prefHeight="557.0" prefWidth="1114.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="hotbook" text="热门图书">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pagination fx:id="page1" layoutX="412.0" layoutY="424.0" prefHeight="61.0" prefWidth="291.0" />
+                        <TableView fx:id="hotbookview" layoutX="30.0" layoutY="73.0" prefHeight="333.0" prefWidth="1055.0">
+                           <columns>
+                              <TableColumn fx:id="book_id1" editable="false" prefWidth="118.0" resizable="false" sortable="false" text="图书ID" />
+                              <TableColumn fx:id="book_name1" editable="false" prefWidth="152.0" resizable="false" sortable="false" text="图书名称" />
+                              <TableColumn fx:id="author1" editable="false" prefWidth="127.0" resizable="false" sortable="false" text="作者" />
+                              <TableColumn fx:id="book_title1" prefWidth="135.0" resizable="false" sortable="false" text="类别" />
+                              <TableColumn fx:id="press1" prefWidth="156.0" resizable="false" sortable="false" text="出版社" />
+                              <TableColumn fx:id="time1" prefWidth="132.0" resizable="false" sortable="false" text="出版时间" />
+                              <TableColumn fx:id="price1" prefWidth="117.0" resizable="false" sortable="false" text="价格" />
+                              <TableColumn fx:id="local1" prefWidth="120.0" resizable="false" sortable="false" text="图书藏馆" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="borsearch" text="借阅查询">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="searchtext" layoutX="280.0" layoutY="47.0" prefHeight="30.0" prefWidth="422.0" />
+                        <Button fx:id="search" layoutX="785.0" layoutY="47.0" mnemonicParsing="false" onAction="#search" text="搜索" />
+                        <TableView fx:id="bookview" layoutX="27.0" layoutY="113.0" prefHeight="292.0" prefWidth="1061.0">
+                          <columns>
+                            <TableColumn fx:id="book_id" prefWidth="118.0" resizable="false" text="图书ID" />
+                            <TableColumn fx:id="book_name" prefWidth="152.0" resizable="false" text="图书名称" />
+                              <TableColumn fx:id="author" prefWidth="127.0" resizable="false" text="作者" />
+                              <TableColumn fx:id="book_title" prefWidth="135.0" resizable="false" text="类别" />
+                              <TableColumn fx:id="press" prefWidth="156.0" resizable="false" text="出版社" />
+                              <TableColumn fx:id="outtime" prefWidth="132.0" resizable="false" text="出版时间" />
+                              <TableColumn fx:id="price" prefWidth="117.0" resizable="false" text="价格" />
+                              <TableColumn fx:id="local" prefWidth="123.0" resizable="false" text="图书藏馆" />
+                          </columns>
+                        </TableView>
+                        <Pagination fx:id="page" layoutX="412.0" layoutY="423.0" prefHeight="46.0" prefWidth="291.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="personmasage" text="个人信息">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="98.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="学号：">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text layoutX="98.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="姓名：">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text layoutX="98.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="性别：">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text layoutX="67.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="已借数量：">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text layoutX="67.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="可借数量：">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text layoutX="67.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="罚款金额：">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text layoutX="761.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="借阅记录">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Text>
+                        <Line endX="400.0" layoutX="659.0" layoutY="107.0" startX="-100.0" stroke="#e41212" strokeWidth="3.0" AnchorPane.bottomAnchor="409.5" AnchorPane.leftAnchor="557.5" AnchorPane.rightAnchor="53.5" AnchorPane.topAnchor="105.5" />
+                        <Text fx:id="student_id" layoutX="154.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text fx:id="student_name" layoutX="154.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="text">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text fx:id="student_sex" layoutX="154.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text fx:id="borrow" layoutX="154.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text fx:id="count" layoutX="154.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text fx:id="ticket" layoutX="154.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <TableView layoutX="608.0" layoutY="163.0" prefHeight="235.0" prefWidth="402.0">
+                          <columns>
+                            <TableColumn fx:id="bor_book_id" maxWidth="150.0" prefWidth="90.0" text="图书ID" />
+                            <TableColumn fx:id="bro_book_id" maxWidth="180.0" prefWidth="113.0" text="图书名称" />
+                              <TableColumn fx:id="endTime" maxWidth="180.0" prefWidth="105.0" text="到期时间" />
+                              <TableColumn fx:id="renew" maxWidth="180.0" prefWidth="93.0" sortable="false" text="续借" />
+                          </columns>
+                        </TableView>
+                        <Text fx:id="sclass" layoutX="62.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="专业班级：">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="student_sclass" layoutX="154.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="signOut" layoutX="1057.0" layoutY="126.0" mnemonicParsing="false" onAction="#signOut" text="退出" textFill="RED" />
+      <Text fill="#f80303" layoutX="293.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="江西财经大学图书馆管理系统">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
