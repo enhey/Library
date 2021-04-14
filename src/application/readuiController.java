@@ -1,27 +1,20 @@
 package application;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import database.Base;
 import database.Book;
 import database.Borrow;
 import database.Person;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Pagination;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 /**
  * 
  * @author ÀµÖ¾Çä
@@ -142,7 +135,7 @@ public class readuiController implements Initializable {
 	// Event Listener on Button[#search].onAction
 	@FXML
 	public void search(ActionEvent event) {
-		ObservableList<Book> books=base.getalllinkesbook(searchtext.getText());	
+		ObservableList<Book> books=base.getalllinkesbook(searchtext.getText());
 		bookview.setItems(books);
 	}
 	public void SetAllBook() {

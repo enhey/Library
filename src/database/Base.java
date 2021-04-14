@@ -1,28 +1,23 @@
 package database;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Observable;
-
-import javax.swing.JOptionPane;
-
-import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
-import com.sun.swing.internal.plaf.synth.resources.synth_sv;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class Base {
 	String id;
-	static Connection con;
+	private static Connection con;
 	public boolean logindata(String id,String password,int flag){		
 		String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
 		String url="jdbc:sqlserver://localhost:1433;DatabaseName=library";
 		try {
 			Class.forName(driver);
-			con = DriverManager.getConnection(url,"library","12345678");	
+			con = DriverManager.getConnection(url,"sa","lzq6z18");
 			Statement statement1=con.createStatement();
 			Statement statement2=con.createStatement();
 			String jid="select reader_id from reader where reader_id='"+id+"'";
@@ -158,7 +153,7 @@ public class Base {
 	}
 	public ObservableList<Book> getalllinkesbook(String bookName) {
 		final ObservableList<Book> books=FXCollections.observableArrayList();//创建一个收集所有列的容器
-		Book book=null;
+		Book book;
 		try {
 			String sql=" select * from book where id like '%"+bookName+"%' "
 					+ "or author like '%"+bookName+"%'"
@@ -188,7 +183,7 @@ public class Base {
 	}
 	public ObservableList<Book> getallbook() {
 		final ObservableList<Book> books=FXCollections.observableArrayList();
-		Book book=null;
+		Book book;
 		try {
 			String sql=" select * from book";
 			Statement stmt=con.createStatement();
@@ -214,7 +209,7 @@ public class Base {
 	}
 	public ObservableList<Book> gethotbook() {
 		final ObservableList<Book> books=FXCollections.observableArrayList();
-		Book book=null;
+		Book book;
 		try {
 			String sql=" select * from book order by freuency desc";
 			Statement stmt=con.createStatement();

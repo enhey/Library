@@ -36,6 +36,5 @@ public class Person {
 	public void setSclass(String sclass) {
 		this.sclass = sclass;
 	}
-	
 
 }

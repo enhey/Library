@@ -1,20 +1,5 @@
 package application;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
-import java.util.ResourceBundle;
-
-import javax.swing.JOptionPane;
-
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-import database.Base;
-import database.Book;
-import database.Borrow;
-import database.Locallist;
-import database.Person;
+import database.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -22,16 +7,17 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
-import oracle.jrockit.jfr.tools.ConCatRepository;
 import others.NeedMethod;
+
+import javax.swing.*;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.ResourceBundle;
 /**
  * 
  * @author 赖志卿
@@ -373,19 +359,18 @@ public class WorkUiController implements Initializable {
 	}
 	
 	public void borrowbook() {//搜索图书实时监听
-		borbook_id.textProperty().addListener(new ChangeListener<String>() {//给borbook_id添加文本监听
-			@Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				Date date=new Date();
-				SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
-				Book book;
-				book=base.getbook(borbook_id.getText());
-				borbook_name.setText(book.getName());
-				borbook_press.setText(book.getPress());
-				borbook_time.setText(book.getTime());
-				borbook_keep.setText(format.format(date));
-            }
-		});
+        //给borbook_id添加文本监听
+        borbook_id.textProperty().addListener((observable, oldValue, newValue) ->
+        {
+            Date date=new Date();
+            SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+            Book book;
+            book=base.getbook(borbook_id.getText());
+            borbook_name.setText(book.getName());
+            borbook_press.setText(book.getPress());
+            borbook_time.setText(book.getTime());
+            borbook_keep.setText(format.format(date));
+});
 	}
 	
 	public void borrowreader() {
@@ -455,11 +440,11 @@ public class WorkUiController implements Initializable {
 		return person;
 	}
 	public void GetAllBook() {
-		book_id.setCellValueFactory(new PropertyValueFactory<Book, String>("id"));//如果没有指定列添加的具体内容，默认添加toSting的内容
+		book_id.setCellValueFactory(new PropertyValueFactory<>("id"));//如果没有指定列添加的具体内容，默认添加toSting的内容
 		book_name.setCellValueFactory(new PropertyValueFactory<Book, String>("name"));
 		author.setCellValueFactory(new PropertyValueFactory<Book, String>("author"));
 		book_title.setCellValueFactory(new PropertyValueFactory<Book, String>("brand"));
-		press.setCellValueFactory(new PropertyValueFactory<Book, String>("press"));
+		press.setCellValueFactory(new PropertyValueFactory<>("press"));
 		time.setCellValueFactory(new PropertyValueFactory<Book, String>("time"));
 		price.setCellValueFactory(new PropertyValueFactory<Book, Double>("price"));
 		local.setCellValueFactory(new PropertyValueFactory<Book, String>("local"));
